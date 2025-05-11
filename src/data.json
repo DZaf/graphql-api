@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Alice",
+    "surname": "Smith",
+    "username": "alice123",
+    "email": "alice@example.com",
+    "password": "$2b$10$tcCVE1WAgedEIaEY0TZaU.SlglSBeFvZZ4JGDno9zyiqGAlwEHYfm",
+    "jobs": [
+      {
+        "title": "Design Logo",
+        "description": "Create new branding logo",
+        "endDate": "2025-06-01"
+      },
+      {
+        "title": "Write Report",
+        "description": "Prepare and review Q2 performance report",
+        "endDate": "2025-07-10"
+      }
+    ]
+  },
+  {
+    "name": "Bob",
+    "surname": "Johnson",
+    "username": "bob321",
+    "email": "bob@example.com",
+    "password": "$2b$10$3qU.v9Hbxok/iBVQRH4Fd.axgDxPIsCOb2uNEqaHEXq01pCeICtOe",
+    "jobs": []
+  }
+]

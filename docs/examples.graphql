@@ -1,0 +1,128 @@
+### Register two users
+mutation RegisterUsers {
+  alice: register(input: {
+    name: "Alice"
+    surname: "Smith"
+    username: "alice123"
+    email: "alice@example.com"
+    password: "passAlice"
+  }) {
+    user { username }
+    message
+    error
+    token
+  }
+
+  bob: register(input: {
+    name: "Bob"
+    surname: "Johnson"
+    username: "bob321"
+    email: "bob@example.com"
+    password: "passBob"
+  }) {
+    user { username }
+    message
+    error
+    token
+  }
+}
+
+### Login as Alice
+mutation LoginAsAlice {
+  login(identifier: "alice@example.com", password: "passAlice") {
+    user { username }
+    message
+    error
+    token
+  }
+}
+
+### Create jobs (requires token in header)
+mutation CreateJobs {
+  job1: createJob(job: {
+    title: "Design Logo"
+    description: "Create new branding logo"
+    endDate: "2025-06-01"
+  }) {
+    message
+    error
+  }
+
+  job2: createJob(job: {
+    title: "Write Report"
+    description: "Prepare Q2 performance report"
+    endDate: "2025-07-01"
+  }) {
+    message
+    error
+  }
+
+  job3: createJob(job: {
+    title: "Deploy Website"
+    description: "Publish site to production"
+    endDate: "2025-06-15"
+  }) {
+    message
+    error
+  }
+}
+
+### Update a job
+mutation UpdateJob {
+  updateJob(
+    title: "Write Report",
+    job: {
+      title: "Write Report"
+      description: "Prepare and review Q2 performance report"
+      endDate: "2025-07-10"
+    }
+  ) {
+    message
+    error
+    user {
+      username
+      jobs {
+        title
+        endDate
+      }
+    }
+  }
+}
+
+### Delete a job
+mutation DeleteJob {
+  deleteJob(title: "Deploy Website") {
+    message
+    error
+    user {
+      username
+      jobs {
+        title
+      }
+    }
+  }
+}
+
+### Get all users (public)
+query AllUsers {
+  users {
+    username
+    email
+    jobs {
+      title
+      endDate
+    }
+  }
+}
+
+### Get jobs of a specific user
+query GetUserJobs {
+  user(username: "alice123") {
+    username
+    jobs {
+      title
+      description
+      endDate
+    }
+  }
+}

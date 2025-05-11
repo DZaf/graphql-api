@@ -1,0 +1,20 @@
+{
+    "name": "graphql-json-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node-dev src/index.ts"
+    },
+    "dependencies": {
+        "apollo-server-express": "^3.12.0",
+        "bcryptjs": "^3.0.2",
+        "express": "^4.18.2",
+        "graphql": "^16.7.1",
+        "jsonwebtoken": "^9.0.2"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.9",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.0.0"
+    }
+}
